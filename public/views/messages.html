@@ -1,0 +1,37 @@
+<div id="messageTable" >
+  <button style='height: 24px; margin-top: 9px;' type="button" class='btn btn-primary btn-xs pull-right ' name="button" ng-click="delete()"><span class="glyphicon glyphicon-trash"></span></button>
+
+  <h2 style="margin-bottom:30px; margin-top:100px">Messages</h2>
+    <table class="table table-hover" >
+    <tbody>
+      <tr ng-repeat="meg in messages track by $index">
+        <td>
+          <div class="ckbox">
+            <input type="checkbox" ng-model="meg.selected">
+            <!-- <label for="checkbox1" ng-model="master"></label> -->
+          </div>
+        </td>
+        <td>
+            <i class="important_star star glyphicon glyphicon-star" ng-click = "importantClicked(meg)" ng-class="{true: 'star-checked'}[meg.important > 0 ]"></i>
+        </td>
+        <td  ng-click= "goToDetails(meg)">
+          <div class="media" >
+            <div class="media-left">
+              <img class="media-object" style="width:60px" src="{{meg.sender_img}}">
+            </div>
+            <div class="media-body" style="padding-top: 7px;">
+              <span class="media-meta pull-right"><span class="importantMessage" ng-show="meg.important>0" style="margin-right:10px" class="pull-left">(important)</span>{{meg.created_at}}</span>
+              <h4 class="media-heading">{{meg.sender}}</h4>
+
+              <p>{{meg.title}}</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+    <hr style="margin-top: -20px;">
+
+</div>

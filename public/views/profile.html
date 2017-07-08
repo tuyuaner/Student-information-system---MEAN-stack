@@ -1,0 +1,108 @@
+
+<div class="panel panel-info" ng-show="!editing">
+  <div class="panel-heading" style="margin-bottom:10px">
+    <h3 class="panel-title">{{name}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/placeholder.png" class="img-circle img-responsive"> </div>
+      <div class=" col-md-9 col-lg-9 ">
+        <table class="table table-user-information table-responsive">
+          <tbody>
+            <tr>
+              <td>Username:</td>
+              <td>{{userInfo.username}}</td>
+            </tr>
+            <tr>
+              <td>First name:</td>
+              <td>{{userInfo.firstname}}</td>
+            </tr>
+            <tr>
+              <td>lastname:</td>
+              <td>{{userInfo.lastname}}</td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td>{{userInfo.phone}}</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>{{userInfo.email}}</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>{{userInfo.location}}</td>
+              <!-- <td><span ng-repeat= "l in userInfo.location">{{$last ? l: l +';'}} </span></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:10px">
+    <div class="col-md-6">
+      <button type="submit" name="button" class="btn btn-info btn-block" ng-click = "edit()" style="height: 40px">Edit</button>
+    </div>
+    <div class="col-md-6">
+      <button type="submit" name="button" class="btn btn-info btn-block" ng-click = "back()" style="height: 40px">Back</button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel panel-info" ng-show="editing">
+  <div class="panel-heading" style="margin-bottom:10px">
+    <h3 class="panel-title">{{name}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="img/placeholder.png" class="img-circle img-responsive"> </div>
+      <div class=" col-md-9 col-lg-9 ">
+        <table class="table table-user-information table-responsive">
+          <tbody>
+            <tr>
+              <td>Username:</td>
+              <td><input class="form-control" type="text" name="" value="{{userInfo.username}}" ng-model= "userInfo.username"></td>
+            </tr>
+            <tr>
+              <td>First name:</td>
+              <td><input class="form-control" type="text" name="" value="{{userInfo.firstname}}" ng-model= "userInfo.firstname"></td>
+            </tr>
+            <tr>
+              <td>Lastname:</td>
+              <td><input class="form-control" type="text" name="" value="{{userInfo.lastname}}" ng-model= "userInfo.lastname"></td>
+            </tr>
+            <tr>
+              <td>Password:</td>
+              <td><input class="form-control" type="password" name="" value="{{userInfo.password}}" ng-model= "userInfo.password"></td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td><input class="form-control" type="text" name="" value="{{userInfo.phone}}" ng-model= "userInfo.phone"></td>
+            </tr>
+            <tr>
+
+              <td>Email</td>
+              <td><input class="form-control" type="text" name="" value="{{userInfo.email}}" ng-model= "userInfo.email"></td>
+
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td><input type="text" name="" class="form-control" value="{{userInfo.location}}" ng-model= "userInfo.location"></td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:10px">
+    <div class="col-md-6">
+      <button type="submit" name="button" class="btn btn-info btn-block" style="height: 40px" ng-click="save()">Save</button>
+    </div>
+    <div class="col-md-6">
+      <button type="submit" name="button" class="btn btn-info btn-block" ng-click = "back()" style="height: 40px">Back</button>
+    </div>
+  </div>
+</div>

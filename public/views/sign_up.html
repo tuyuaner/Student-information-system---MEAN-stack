@@ -1,0 +1,91 @@
+<form class="form" id = "sign_up" ng-submit="registerUser()" name="userForm">
+  <h2 class="sign_hearder">Sign Up</h2>
+  <div class="form-group">
+    <label for="username" >Username:</label>
+    <input type="text" name="username" value="" placeholder = "Enter username" class = "form-control" ng-model = "userInfo.username" required>
+    <span ng-show = "userForm.username.$dirty && userForm.username.$error.required">Username required!</span>
+
+  </div>
+  <div class="form-group">
+    <label for="pwd" >Password:</label>
+    <input type="password" name="password" value="" placeholder = "Enter password" class = "passwordfiel form-control" ng-model = "userInfo.password" ng-minlength = "6" ng-maxlength = "16" required>
+    <span class="glyphicon glyphicon-eye-open" style="display: none"></span>
+    <span ng-show = "userForm.password.$dirty && userForm.password.$error.required">Password required!</span>
+    <span ng-show = "userForm.password.$dirty && userForm.password.$error.minlength">Too short!</span>
+    <span ng-show = "userForm.password.$dirty && userForm.password.$error.maxlength">Too Long!</span>
+  </div>
+  <div class="form-group">
+    <label for="firstname" >First name:</label>
+    <input type="text" name="firstname" value="" placeholder = "Enter firstname" class = "form-control" ng-model = "userInfo.firstname" required>
+    <span ng-show = "userForm.firstname.$dirty && userForm.firstname.$error.required">First name required!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="lastname" >Last name:</label>
+    <input type="text" name="lastname" value="" placeholder = "Enter lastname" class = "form-control" ng-model = "userInfo.lastname" required>
+    <span ng-show = "userForm.lastname.$dirty && userForm.lastname.$error.required">Last name required!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="email" >Email:</label>
+    <input type="email" name="email" value="" placeholder = "Enter Email" class = "form-control" ng-model = "userInfo.email" required>
+    <span ng-show = "userForm.email.$dirty && userForm.email.$error.required">Email required!</span>
+    <span ng-show = "userForm.email.$error.email"> not a email!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="phone" >Phone:</label>
+    <input type="number" name="phone" value="" placeholder = "Enter phone" class = "form-control" ng-model = "userInfo.phone" required>
+    <span ng-show = "userForm.phone.$dirty && userForm.phone.$error.required">Phone required!</span>
+    <span ng-show = "userForm.phone.$dirty && userForm.phone.$invalid">Not a number!</span>
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="location" >Location:</label>
+    <input id="location_sign_up" type="location" class="form-control" placeholder="Enter location" name="location" ondrop="drop(event)" ondragover="dropOver(event)" ng-model = "userInfo.location" required>{{location}}
+    <ul class="list-inline location_list" style="margin-left: 1px;">
+
+      <li draggable="true" ondragstart="drag(event)" ng-repeat = 'l in locations'>{{l}}</li>
+    </ul>
+    <span ng-show = "userForm.location.$dirty && userForm.location.$error.required">Location required!</span>
+  </div>
+ -->
+ <!-- <div class="form-group">
+   <label for="location" >Location:</label>
+   <input id="location_sign_up" type="location" class="form-control" placeholder="Enter location" name="location" ng-model = "userInfo.location" required>{{location}}
+   <ul class="list-inline location_list" style="margin-left: 1px;">
+
+     <li class='dragLocation' draggable="true" ng-repeat = 'l in locations'>{{l}}</li>
+   </ul>
+   <span ng-show = "userForm.location.$dirty && userForm.location.$error.required">Location required!</span>
+ </div> -->
+
+
+
+  <div class="form-group">
+    <label for="location" >Location:</label>
+    <input data-drop="true" data-jqyoui-options jqyoui-droppable ="{onDrop:'myDropCallBack'}" id="location_sign_up" type="location" class="form-control" placeholder="Enter location" name="location" ng-model = "userInfo.location" required>{{location}}
+    <ul class="list-inline location_list" style="margin-left: 1px;">
+      <li data-drag="true" jqyoui-draggable="{animate:true}" data-jqyoui-options="{revert: 'invalid'}" ng-repeat='l in locations' name = {{l}}>{{l}}</li>
+    </ul>
+    <span ng-show = "userForm.location.$dirty && userForm.location.$error.required">Location required!</span>
+  </div>
+
+
+
+  <button type="submit" ng-disabled = "userForm.$invalid" name="button" class="btn btn-info btn-block">Sign Up</button>
+  <input type="button" class="btn btn-info btn-block" value="Reset" ng-click = "reset()" style="height: 40px">
+
+<!--
+</form>
+
+
+<h2 class="sign_hearder">Sign Up</h2>
+<form class="" name="userForm">
+  <div class="form-group">
+    <label for="username" >Username:</label>
+    <input type="text" name="username" value="" placeholder = "Enter username" class = "form-control" ng-model = "userInfo.username" required>
+    <span ng-show = "userForm.username.$$dirty && userForm.username.$error.required">required!</span>
+  </div>
+
+</form> -->
