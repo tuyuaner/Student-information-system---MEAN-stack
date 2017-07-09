@@ -1,6 +1,8 @@
 # Student-management-system---MEAN-stack
 
-run server: npm start
+run server: 
+    npm install
+    npm start
 
 
 1. Create a login page
