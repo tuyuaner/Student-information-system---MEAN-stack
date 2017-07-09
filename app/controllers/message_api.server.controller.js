@@ -1,27 +1,11 @@
 var Message = require('../models/message');
 
-// exports.lists = function(req,res){
-//   Message.find({recipient:req.body.recipient}).exec(function(err, result){
-//     if (err) throw err;
-//     console.log(req.params.recipient);
-//     if (!result){
-//       res.send({success: false, info: "Can't find any message"})
-//     }else{
-//
-//       // res.send({success: true, info: "Find messages", message: result})
-//       res.json(result)
-//     }
-//   });
-// }{'recipient':req.body.recipient}
-
 exports.lists = function(req,res){
   Message.find({recipient:req.params.recipient}, function(err, result){
     if (err) throw err;
     if (!result){
       res.send({success: false, info: "Can't find any message"})
     }else{
-      // console.log(result);
-      // res.send({success: true, info: "Find messages", message: result})
       res.json(result);
     }
   });

@@ -23,18 +23,13 @@ angular.module('studentApp')
   };
 
   factory.loginUser = function(name,pass){
-    console.log('user before login in factory');
     var User = $resource('api/newUser/:username/:password',{}, {get: {method: 'get',params:{username:name, password:pass}, isArray: true}});
     return User;
-    // return User.get({username:name, password:pass}).$promise.then(function(result){
-    //   return result;
-    // });
   };
 //
 
   factory.checkForUserLogin = function(state, elState=""){
     var user =JSON.parse(sessionStorage.getItem("currentUser"));
-    console.log("check user logged in service ", user);
     if (user){
       $state.go(state,{
               username: user.username
@@ -57,7 +52,6 @@ angular.module('studentApp')
     newUser.location = userInfo.location;
     newUser.$save(function(result){
       console.log("saving", result);
-
       sessionStorage.setItem('currentUser', JSON.stringify(result));
       $state.go("home",{
           username: result.username
@@ -73,7 +67,6 @@ angular.module('studentApp')
 
     var newUser = new User (userInfo);
     return User.update(newUser).$promise.then(function(result){
-      console.log(result.nModified);
       if (result.nModified == 1){
         sessionStorage.setItem("currentUser",JSON.stringify(userInfo));
         $state.go("home",{

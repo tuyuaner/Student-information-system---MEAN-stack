@@ -74,9 +74,3 @@ exports.updateUser = function(req, res){
       }
     )
 }
-
-
-// db.users.updateOne(
-// {'_id' : ObjectId('591cb710a3184e05bbea37d5')},
-//   {$set: {'username':'tyy'}}
-// )

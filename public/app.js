@@ -68,13 +68,6 @@ studentApp.config(['$stateProvider','$urlRouterProvider', function($stateProvide
               templateUrl:"/views/home.html"
             }
           },
-          // resolve: {
-          //   check : function(userServices){
-          //
-          //     userServices.checkForUserLogin("home","loginWarning");
-          //   }
-          // }
-
         })
       .state('profile',
         {
@@ -89,12 +82,6 @@ studentApp.config(['$stateProvider','$urlRouterProvider', function($stateProvide
               templateUrl:"/views/profile.html"
             }
           },
-          // resolve: {
-          //   check : function(userServices){
-          //     userServices.checkForUserLogin("profile","loginWarning");
-          //   }
-          // }
-
         })
       .state('messages',
         {
@@ -109,15 +96,6 @@ studentApp.config(['$stateProvider','$urlRouterProvider', function($stateProvide
               templateUrl:"/views/messages.html"
             }
           },
-          // resolve: {
-          //   getMessages : function($http, messageServices){
-          //     // console.log(JSON.parse(sessionStorage.getItem("currentUser")).username); //return Arun
-          //     messageServices.getMessages(JSON.parse(sessionStorage.getItem("currentUser")).username).then(function(result){
-          //       sessionStorage.setItem('messages',  JSON.stringify(result.data))
-          //     });
-          //   }
-          // }
-
         })
 
 
