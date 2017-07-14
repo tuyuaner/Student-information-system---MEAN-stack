@@ -1,4 +1,4 @@
-# Student-management-system---MEAN-stack
+# Student-information-system---MEAN-stack
 
 run server: 
 
